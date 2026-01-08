@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Instalación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .check-item.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .check-item.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .icon {
+            font-size: 24px;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .info {
+            flex: 1;
+        }
+        
+        .info strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .info small {
+            display: block;
+            opacity: 0.7;
+        }
+        
+        .summary {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e7f3ff;
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .summary h2 {
+            color: #2196F3;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Verificador de Instalación</h1>
+        
+        <div id="checks"></div>
+        
+        <div class="summary" id="summary"></div>
+        
+        <a href="menu-restaurante.html" class="btn">Ir al Menú del Restaurante</a>
+    </div>
+    
+    <script>
+        const checks = [];
+        
+        // Verificar archivos
+        function checkFile(filename, required = true) {
+            return fetch(filename)
+                .then(response => {
+                    if (response.ok) {
+                        checks.push({
+                            name: filename,
+                            status: 'success',
+                            message: 'Archivo encontrado y accesible'
+                        });
+                        return true;
+                    } else {
+                        checks.push({
+                            name: filename,
+                            status: 'error',
+                            message: `Error ${response.status}: ${response.statusText}`
+                        });
+                        return false;
+                    }
+                })
+                .catch(error => {
+                    checks.push({
+                        name: filename,
+                        status: 'error',
+                        message: `No se pudo cargar: ${error.message}`
+                    });
+                    return false;
+                });
+        }
+        
+        // Verificar configuración de WhatsApp
+        function checkWhatsAppConfig() {
+            return fetch('menu-restaurante.js')
+                .then(response => response.text())
+                .then(text => {
+                    const hasDefaultNumber = text.includes("'1234567890'");
+                    if (hasDefaultNumber) {
+                        checks.push({
+                            name: 'Configuración WhatsApp',
+                            status: 'error',
+                            message: '⚠️ Número de WhatsApp no configurado. Debes cambiarlo en menu-restaurante.js'
+                        });
+                        return false;
+                    } else {
+                        checks.push({
+                            name: 'Configuración WhatsApp',
+                            status: 'success',
+                            message: 'Número de WhatsApp configurado'
+                        });
+                        return true;
+                    }
+                })
+                .catch(() => {
+                    checks.push({
+                        name: 'Configuración WhatsApp',
+                        status: 'error',
+                        message: 'No se pudo verificar la configuración'
+                    });
+                    return false;
+                });
+        }
+        
+        // Verificar HTTPS
+        function checkHTTPS() {
+            const isHTTPS = window.location.protocol === 'https:';
+            checks.push({
+                name: 'Conexión Segura (HTTPS)',
+                status: isHTTPS ? 'success' : 'error',
+                message: isHTTPS 
+                    ? 'HTTPS activado ✓ (requerido para WhatsApp)' 
+                    : '⚠️ HTTPS no detectado. WhatsApp requiere conexión segura'
+            });
+            return isHTTPS;
+        }
+        
+        // Ejecutar todas las verificaciones
+        async function runChecks() {
+            await checkFile('menu-restaurante.html');
+            await checkFile('menu-restaurante.css');
+            await checkFile('menu-restaurante.js');
+            await checkWhatsAppConfig();
+            checkHTTPS();
+            
+            // Mostrar resultados
+            displayResults();
+        }
+        
+        function displayResults() {
+            const checksContainer = document.getElementById('checks');
+            const summaryContainer = document.getElementById('summary');
+            
+            let successCount = 0;
+            let errorCount = 0;
+            
+            checks.forEach(check => {
+                const div = document.createElement('div');
+                div.className = `check-item ${check.status}`;
+                
+                const icon = check.status === 'success' ? '✓' : '✗';
+                
+                div.innerHTML = `
+                    <span class="icon">${icon}</span>
+                    <div class="info">
+                        <strong>${check.name}</strong>
+                        <small>${check.message}</small>
+                    </div>
+                `;
+                
+                checksContainer.appendChild(div);
+                
+                if (check.status === 'success') {
+                    successCount++;
+                } else {
+                    errorCount++;
+                }
+            });
+            
+            // Resumen
+            const total = checks.length;
+            const allSuccess = errorCount === 0;
+            
+            summaryContainer.innerHTML = `
+                <h2>${allSuccess ? '✅ Todo Correcto' : '⚠️ Revisa los Errores'}</h2>
+                <p>
+                    <strong>Total de verificaciones:</strong> ${total}<br>
+                    <strong>Exitosas:</strong> ${successCount}<br>
+                    <strong>Con errores:</strong> ${errorCount}
+                </p>
+                ${!allSuccess ? '<p style="margin-top: 10px; color: #721c24;"><strong>Acción requerida:</strong> Corrige los errores antes de usar el menú.</p>' : ''}
+            `;
+        }
+        
+        // Ejecutar al cargar
+        runChecks();
+    </script>
+</body>
+</html>

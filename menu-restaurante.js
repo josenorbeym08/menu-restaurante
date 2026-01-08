@@ -1,5 +1,5 @@
 // Número de WhatsApp (cambiar por el número real del restaurante)
-const WHATSAPP_NUMBER = '573005979838'; // Formato: código de país + número sin espacios ni símbolos
+const WHATSAPP_NUMBER = '1234567890'; // Formato: código de país + número sin espacios ni símbolos
 
 // Estado del carrito
 let cart = [];
@@ -226,19 +226,6 @@ function sendOrderToWhatsApp() {
     }, 500);
 }
 
-// Función para pedido directo (sin carrito)
-function sendDirectOrder(itemName, price) {
-    const message = `🍽️ *PEDIDO RÁPIDO*\n\n` +
-                   `Plato: ${itemName}\n` +
-                   `Precio: $${price.toFixed(2)}\n\n` +
-                   `Gracias por tu pedido! 🎉`;
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-    
-    window.open(whatsappURL, '_blank');
-}
-
 // Notificaciones
 function showNotification(message, type = 'success') {
     // Remover notificación existente
@@ -299,4 +286,3 @@ function showNotification(message, type = 'success') {
 // Hacer funciones disponibles globalmente para onclick
 window.updateQuantity = updateQuantity;
 window.removeFromCart = removeFromCart;
-
