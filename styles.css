@@ -10,6 +10,7 @@ body {
     color: #333;
     padding: 20px;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
@@ -63,6 +64,7 @@ header p {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-left: 4px solid #667eea;
+    gap: 15px;
 }
 
 .menu-item:hover {
@@ -70,8 +72,29 @@ header p {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
+.item-image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item-image:hover img {
+    transform: scale(1.05);
+}
+
 .item-info {
     flex: 1;
+    min-width: 0;
 }
 
 .item-name {
@@ -87,12 +110,58 @@ header p {
     margin-top: 5px;
 }
 
+.item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
 .item-price {
     font-size: 1.5em;
     font-weight: bold;
     color: #667eea;
-    margin-left: 20px;
     white-space: nowrap;
+}
+
+/* Botón de WhatsApp individual para cada producto */
+.btn-whatsapp-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-item:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp-item:active {
+    transform: translateY(0);
+}
+
+.btn-whatsapp-item svg {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.btn-whatsapp-item:focus {
+    outline: 2px solid rgba(37, 211, 102, 0.5);
+    outline-offset: 2px;
 }
 
 .whatsapp-cta {
@@ -122,10 +191,17 @@ header p {
     background: #20BA5A;
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    color: white;
+    text-decoration: none;
 }
 
 .whatsapp-button:active {
     transform: scale(0.98);
+}
+
+.whatsapp-button:focus {
+    outline: 3px solid rgba(37, 211, 102, 0.5);
+    outline-offset: 2px;
 }
 
 .whatsapp-icon {
@@ -162,22 +238,80 @@ header p {
     font-weight: 500;
 }
 
+/* Estilos para mejorar la accesibilidad y usabilidad */
+.menu-item:focus-within {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.menu-item[tabindex] {
+    cursor: pointer;
+}
+
+/* Media queries para responsive design */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
     header h1 {
         font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
     }
 
     .menu-section {
         padding: 20px;
     }
 
+    .section-title {
+        font-size: 1.5em;
+        margin: 20px 0 15px 0;
+    }
+
     .menu-item {
-        flex-direction: column;
+        flex-direction: row;
+        padding: 15px;
+        margin: 10px 0;
+        gap: 12px;
+    }
+
+    .item-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .item-name {
+        font-size: 1.1em;
+    }
+
+    .item-description {
+        font-size: 0.9em;
+    }
+
+    .item-right {
+        align-items: flex-end;
+        gap: 8px;
     }
 
     .item-price {
-        margin-left: 0;
-        margin-top: 10px;
+        font-size: 1.3em;
+    }
+
+    .btn-whatsapp-item {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+
+    .btn-whatsapp-item svg {
+        width: 16px;
+        height: 16px;
     }
 
     .whatsapp-button {
@@ -185,10 +319,114 @@ header p {
         font-size: 1em;
     }
 
+    .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+
     .whatsapp-cta {
         bottom: 20px;
         right: 20px;
     }
+
+    .floating-info {
+        margin: 15px 15px;
+        padding: 15px;
+    }
+
+    .floating-info p {
+        font-size: 0.9em;
+    }
 }
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .menu-item {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .item-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-name {
+        font-size: 1em;
+    }
+
+    .btn-whatsapp-item {
+        padding: 7px 12px;
+        font-size: 0.8em;
+    }
+
+    .btn-whatsapp-item svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .whatsapp-button {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .whatsapp-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .whatsapp-cta {
+        display: none;
+    }
+
+    .menu-item {
+        page-break-inside: avoid;
+    }
+}
+
+/* Animación suave al cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-item {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+
 
 
