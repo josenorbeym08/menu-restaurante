@@ -3,274 +3,692 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú del Restaurante</title>
-    <link rel="stylesheet" href="menu-restaurante.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Menú Restaurante - Carta Digital</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">🍽️ Restaurante Delicioso</h1>
-            <p class="tagline">Sabores que enamoran</p>
-        </div>
-    </header>
-
     <div class="container">
-        <div class="menu-header">
-            <h2>Nuestro Menú</h2>
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Todo</button>
-                <button class="filter-btn" data-filter="entradas">Entradas</button>
-                <button class="filter-btn" data-filter="platos">Platos Principales</button>
-                <button class="filter-btn" data-filter="postres">Postres</button>
-                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+        <header>
+            <h1>🍽️ Restaurante La Delicia</h1>
+            <p>Cocina tradicional con toque moderno</p>
+        </header>
+
+        <div class="menu-section">
+            <div class="floating-info">
+                <p>📞 ¿Tienes alguna pregunta o quieres hacer tu pedido?</p>
+                <p>¡Haz clic en el botón de WhatsApp!</p>
+            </div>
+
+            <h2 class="section-title">🍕 Entradas</h2>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Nachos Especiales</div>
+                    <div class="item-description">Nachos crujientes con queso derretido, jalapeños, guacamole y salsa</div>
+                </div>
+                <div class="item-price">$18.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Bruschetta Italiana</div>
+                    <div class="item-description">Pan tostado con tomate fresco, albahaca, ajo y aceite de oliva</div>
+                </div>
+                <div class="item-price">$15.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Ceviche de Pescado</div>
+                    <div class="item-description">Pescado fresco marinado en limón, cebolla, cilantro y ají</div>
+                </div>
+                <div class="item-price">$21.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Aros de Cebolla</div>
+                    <div class="item-description">Aros de cebolla empanizados y fritos con salsa especial</div>
+                </div>
+                <div class="item-price">$14.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Empanadas de Carne</div>
+                    <div class="item-description">Empanadas colombianas con carne, papa y ajiaco (6 unidades)</div>
+                </div>
+                <div class="item-price">$16.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Patacones con Hogao</div>
+                    <div class="item-description">Patacones crujientes con hogao colombiano y guacamole</div>
+                </div>
+                <div class="item-price">$13.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Quesadillas Mexicanas</div>
+                    <div class="item-description">Tortillas con queso, pollo, champiñones y pimientos</div>
+                </div>
+                <div class="item-price">$17.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Dedos de Queso</div>
+                    <div class="item-description">Palitos de queso mozzarella empanizados con salsa marinara</div>
+                </div>
+                <div class="item-price">$16.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Picada Colombiana</div>
+                    <div class="item-description">Chorizo, chicharrón, papa criolla, yuca frita y arepa</div>
+                </div>
+                <div class="item-price">$25.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Hummus con Pita</div>
+                    <div class="item-description">Puré de garbanzos con aceite de oliva y pan pita tostado</div>
+                </div>
+                <div class="item-price">$14.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Palitos de Ajo</div>
+                    <div class="item-description">Palitos de pan con mantequilla de ajo y hierbas frescas</div>
+                </div>
+                <div class="item-price">$12.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Camarones al Ajillo</div>
+                    <div class="item-description">Camarones salteados con ajo, limón y perejil</div>
+                </div>
+                <div class="item-price">$28.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tequeños Venezolanos</div>
+                    <div class="item-description">Palitos de queso envueltos en masa frita (8 unidades)</div>
+                </div>
+                <div class="item-price">$17.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Ensalada César</div>
+                    <div class="item-description">Lechuga romana, pollo, crutones, parmesano y aderezo césar</div>
+                </div>
+                <div class="item-price">$19.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Papas a la Francesa</div>
+                    <div class="item-description">Papas fritas crujientes con salsas a elección</div>
+                </div>
+                <div class="item-price">$10.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Champiñones Rellenos</div>
+                    <div class="item-description">Champiñones rellenos de queso crema y tocino</div>
+                </div>
+                <div class="item-price">$18.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tamales Colombianos</div>
+                    <div class="item-description">Tamal tradicional con pollo, cerdo, papa y especias</div>
+                </div>
+                <div class="item-price">$16.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Yuca Frita con Suero</div>
+                    <div class="item-description">Yuca frita dorada con suero costeño y hogao</div>
+                </div>
+                <div class="item-price">$13.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Ensalada Caprese</div>
+                    <div class="item-description">Tomate, mozzarella fresca, albahaca y aceite balsámico</div>
+                </div>
+                <div class="item-price">$17.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Calamar Frito</div>
+                    <div class="item-description">Aros de calamar empanizados con salsa tártara y limón</div>
+                </div>
+                <div class="item-price">$22.000</div>
+            </div>
+
+            <h2 class="section-title">🍝 Platos Principales</h2>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Lasaña Casera</div>
+                    <div class="item-description">Lasaña tradicional con carne, queso mozzarella y salsa bechamel</div>
+                </div>
+                <div class="item-price">$32.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Salmón a la Plancha</div>
+                    <div class="item-description">Salmón fresco con vegetales salteados y arroz pilaf</div>
+                </div>
+                <div class="item-price">$38.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Risotto de Champiñones</div>
+                    <div class="item-description">Arroz cremoso con champiñones frescos y parmesano</div>
+                </div>
+                <div class="item-price">$29.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pollo a la Parrilla</div>
+                    <div class="item-description">Pechuga de pollo marinada con hierbas, papas rústicas y ensalada</div>
+                </div>
+                <div class="item-price">$28.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Bandeja Paisa</div>
+                    <div class="item-description">Chicharrón, carne molida, frijoles, arroz, huevo, aguacate y arepa</div>
+                </div>
+                <div class="item-price">$35.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pasta Carbonara</div>
+                    <div class="item-description">Spaghetti con tocino, crema, parmesano y huevo</div>
+                </div>
+                <div class="item-price">$26.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Arroz con Pollo</div>
+                    <div class="item-description">Arroz amarillo con pollo, verduras y papas criollas</div>
+                </div>
+                <div class="item-price">$27.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Milanesa de Res</div>
+                    <div class="item-description">Filete de res empanizado con papas a la francesa y ensalada</div>
+                </div>
+                <div class="item-price">$30.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Hamburguesa Gourmet</div>
+                    <div class="item-description">Carne 200g, queso, tocino, lechuga, tomate y papas fritas</div>
+                </div>
+                <div class="item-price">$28.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pescado Frito</div>
+                    <div class="item-description">Pescado entero frito con arroz con coco, patacón y ensalada</div>
+                </div>
+                <div class="item-price">$33.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spaghetti Bolognesa</div>
+                    <div class="item-description">Pasta con salsa de carne molida, tomate y especias</div>
+                </div>
+                <div class="item-price">$25.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pechuga Rellena</div>
+                    <div class="item-description">Pechuga rellena de jamón y queso con puré de papa</div>
+                </div>
+                <div class="item-price">$31.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Costillas BBQ</div>
+                    <div class="item-description">Costillas de cerdo con salsa barbacoa, yuca y ensalada coleslaw</div>
+                </div>
+                <div class="item-price">$36.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Cazuela de Mariscos</div>
+                    <div class="item-description">Mezcla de mariscos en salsa de tomate con arroz</div>
+                </div>
+                <div class="item-price">$42.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pasta Alfredo</div>
+                    <div class="item-description">Fettuccine con salsa cremosa de parmesano y pollo</div>
+                </div>
+                <div class="item-price">$27.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Chuleta de Cerdo</div>
+                    <div class="item-description">Chuleta asada con puré de papa y vegetales salteados</div>
+                </div>
+                <div class="item-price">$29.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Arroz Mar y Tierra</div>
+                    <div class="item-description">Arroz con camarones, pollo, carne y chorizo</div>
+                </div>
+                <div class="item-price">$34.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pizza Margherita</div>
+                    <div class="item-description">Pizza italiana con tomate, mozzarella y albahaca fresca</div>
+                </div>
+                <div class="item-price">$26.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tacos de Res</div>
+                    <div class="item-description">Tacos de carne con guacamole, pico de gallo y crema (3 unidades)</div>
+                </div>
+                <div class="item-price">$24.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Sobre Barriga</div>
+                    <div class="item-description">Sobre barriga en salsa con papas salteadas y arroz</div>
+                </div>
+                <div class="item-price">$32.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pasta Pesto</div>
+                    <div class="item-description">Penne con salsa pesto de albahaca, piñones y parmesano</div>
+                </div>
+                <div class="item-price">$26.500</div>
+            </div>
+
+            <h2 class="section-title">🍰 Postres</h2>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tiramisú</div>
+                    <div class="item-description">Postre italiano tradicional con café, cacao y mascarpone</div>
+                </div>
+                <div class="item-price">$14.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Brownie con Helado</div>
+                    <div class="item-description">Brownie de chocolate caliente con helado de vainilla</div>
+                </div>
+                <div class="item-price">$15.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Cheesecake de Fresa</div>
+                    <div class="item-description">Tarta de queso cremosa con compota de fresas frescas</div>
+                </div>
+                <div class="item-price">$14.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tres Leches</div>
+                    <div class="item-description">Bizcocho bañado en tres leches con crema chantilly</div>
+                </div>
+                <div class="item-price">$13.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Flan de Caramelo</div>
+                    <div class="item-description">Flan casero con caramelo líquido y crema</div>
+                </div>
+                <div class="item-price">$12.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Mousse de Chocolate</div>
+                    <div class="item-description">Mousse cremosa de chocolate belga con frutos rojos</div>
+                </div>
+                <div class="item-price">$15.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Profiteroles</div>
+                    <div class="item-description">Buñuelos rellenos de crema con chocolate caliente</div>
+                </div>
+                <div class="item-price">$16.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Helado de Tres Sabores</div>
+                    <div class="item-description">Helado de vainilla, chocolate y fresa con toppings</div>
+                </div>
+                <div class="item-price">$13.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pastel de Chocolate</div>
+                    <div class="item-description">Torta húmeda de chocolate con ganache y fresas</div>
+                </div>
+                <div class="item-price">$16.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Crepas de Nutella</div>
+                    <div class="item-description">Crepas dulces rellenas de nutella y banano</div>
+                </div>
+                <div class="item-price">$15.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Arroz con Leche</div>
+                    <div class="item-description">Postre tradicional colombiano con canela y pasas</div>
+                </div>
+                <div class="item-price">$11.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Cupcake de Red Velvet</div>
+                    <div class="item-description">Cupcake de terciopelo rojo con frosting de queso crema</div>
+                </div>
+                <div class="item-price">$12.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Volcán de Chocolate</div>
+                    <div class="item-description">Bizcocho de chocolate con centro fundido y helado</div>
+                </div>
+                <div class="item-price">$17.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Pay de Limón</div>
+                    <div class="item-description">Tarta de limón con base de galleta y merengue</div>
+                </div>
+                <div class="item-price">$14.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Gelato Artesanal</div>
+                    <div class="item-description">Helado italiano en sabores: pistacho, fresa, chocolate</div>
+                </div>
+                <div class="item-price">$14.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Alfajores</div>
+                    <div class="item-description">Galletas rellenas de dulce de leche (3 unidades)</div>
+                </div>
+                <div class="item-price">$13.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Soufflé de Queso</div>
+                    <div class="item-description">Soufflé caliente de queso con mermelada de frutos rojos</div>
+                </div>
+                <div class="item-price">$16.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Malteada</div>
+                    <div class="item-description">Batido espeso de chocolate, vainilla o fresa con crema</div>
+                </div>
+                <div class="item-price">$12.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tarta de Queso</div>
+                    <div class="item-description">Cheesecake estilo New York con salsa de frutos rojos</div>
+                </div>
+                <div class="item-price">$15.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Waffle Belga</div>
+                    <div class="item-description">Waffle crujiente con helado, sirope de chocolate y fresas</div>
+                </div>
+                <div class="item-price">$16.500</div>
+            </div>
+
+            <h2 class="section-title">🥤 Bebidas</h2>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Jugos Naturales</div>
+                    <div class="item-description">Naranja, mango, maracuyá, fresa, guanábana (vaso grande)</div>
+                </div>
+                <div class="item-price">$8.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Refrescos</div>
+                    <div class="item-description">Coca Cola, Sprite, Fanta, Postobón, Agua con gas</div>
+                </div>
+                <div class="item-price">$5.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Café Espresso</div>
+                    <div class="item-description">Café espresso, cappuccino, latte, americano, macchiato</div>
+                </div>
+                <div class="item-price">$7.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Limonada Natural</div>
+                    <div class="item-description">Limonada de coco, limonada de panela, limonada de hierbabuena</div>
+                </div>
+                <div class="item-price">$6.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Aguas Aromáticas</div>
+                    <div class="item-description">Hierbabuena, manzanilla, canela, té verde, té negro</div>
+                </div>
+                <div class="item-price">$5.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Batidos de Fruta</div>
+                    <div class="item-description">Batido de mora, maracuyá, mango, banano, fresa</div>
+                </div>
+                <div class="item-price">$9.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Cerveza Nacional</div>
+                    <div class="item-description">Aguila, Poker, Club Colombia, Corona (botella)</div>
+                </div>
+                <div class="item-price">$7.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Chocolate Caliente</div>
+                    <div class="item-description">Chocolate caliente tradicional o con canela</div>
+                </div>
+                <div class="item-price">$6.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Gaseosa Colombiana</div>
+                    <div class="item-description">Colombiana, Manzana Postobón, Kola Roman</div>
+                </div>
+                <div class="item-price">$5.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Smoothies</div>
+                    <div class="item-description">Smoothie de frutas mixtas, verde detox, tropical</div>
+                </div>
+                <div class="item-price">$10.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Agua de Panela</div>
+                    <div class="item-description">Agua de panela con limón o natural</div>
+                </div>
+                <div class="item-price">$4.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Cerveza Artesanal</div>
+                    <div class="item-description">Cerveza artesanal local (IPA, Lager, Porter)</div>
+                </div>
+                <div class="item-price">$12.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Café Especial</div>
+                    <div class="item-description">Café colombiano premium, café con leche, cortado</div>
+                </div>
+                <div class="item-price">$8.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Agua Embotellada</div>
+                    <div class="item-description">Agua natural o con gas (500ml)</div>
+                </div>
+                <div class="item-price">$3.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Lulada</div>
+                    <div class="item-description">Bebida tradicional vallecaucana de lulo</div>
+                </div>
+                <div class="item-price">$8.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Jugo de Caña</div>
+                    <div class="item-description">Jugo de caña de azúcar natural con limón</div>
+                </div>
+                <div class="item-price">$7.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Mojito Sin Alcohol</div>
+                    <div class="item-description">Mojito virgin con limón, menta y soda</div>
+                </div>
+                <div class="item-price">$9.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Aromática de Café</div>
+                    <div class="item-description">Té de cáscara de café con canela</div>
+                </div>
+                <div class="item-price">$5.000</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Gaseosa Sin Azúcar</div>
+                    <div class="item-description">Coca Cola Zero, Sprite Zero, Postobón Light</div>
+                </div>
+                <div class="item-price">$5.500</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Vino Tinto</div>
+                    <div class="item-description">Vino tinto nacional o importado (copa)</div>
+                </div>
+                <div class="item-price">$15.000</div>
             </div>
         </div>
-
-        <!-- Entradas -->
-        <section class="menu-section" data-category="entradas">
-            <h3 class="section-title">
-                <i class="fas fa-utensils"></i>
-                Entradas
-            </h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400" alt="Ensalada César">
-                    </div>
-                    <div class="item-content">
-                        <h4>Ensalada César</h4>
-                        <p>Lechuga fresca, pollo a la parrilla, crutones y aderezo césar</p>
-                        <div class="item-footer">
-                            <span class="price">$12.99</span>
-                            <button class="whatsapp-btn" data-item="Ensalada César" data-price="12.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1574781330858-1c37a0d4c5e5?w=400" alt="Nachos">
-                    </div>
-                    <div class="item-content">
-                        <h4>Nachos Supremos</h4>
-                        <p>Tortillas crujientes, queso derretido, jalapeños y guacamole</p>
-                        <div class="item-footer">
-                            <span class="price">$10.99</span>
-                            <button class="whatsapp-btn" data-item="Nachos Supremos" data-price="10.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400" alt="Bruschetta">
-                    </div>
-                    <div class="item-content">
-                        <h4>Bruschetta Italiana</h4>
-                        <p>Pan tostado con tomate, albahaca fresca y aceite de oliva</p>
-                        <div class="item-footer">
-                            <span class="price">$8.99</span>
-                            <button class="whatsapp-btn" data-item="Bruschetta Italiana" data-price="8.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platos Principales -->
-        <section class="menu-section" data-category="platos">
-            <h3 class="section-title">
-                <i class="fas fa-drumstick-bite"></i>
-                Platos Principales
-            </h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1546832890-8b4eac3d0e3a?w=400" alt="Pasta Carbonara">
-                    </div>
-                    <div class="item-content">
-                        <h4>Pasta Carbonara</h4>
-                        <p>Spaghetti con tocino, crema, parmesano y huevo</p>
-                        <div class="item-footer">
-                            <span class="price">$16.99</span>
-                            <button class="whatsapp-btn" data-item="Pasta Carbonara" data-price="16.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=400" alt="Salmón">
-                    </div>
-                    <div class="item-content">
-                        <h4>Salmón a la Parrilla</h4>
-                        <p>Salmón fresco con vegetales asados y salsa de limón</p>
-                        <div class="item-footer">
-                            <span class="price">$22.99</span>
-                            <button class="whatsapp-btn" data-item="Salmón a la Parrilla" data-price="22.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400" alt="Hamburguesa">
-                    </div>
-                    <div class="item-content">
-                        <h4>Hamburguesa Clásica</h4>
-                        <p>Carne 200g, queso, lechuga, tomate, cebolla y papas fritas</p>
-                        <div class="item-footer">
-                            <span class="price">$14.99</span>
-                            <button class="whatsapp-btn" data-item="Hamburguesa Clásica" data-price="14.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400" alt="Pizza">
-                    </div>
-                    <div class="item-content">
-                        <h4>Pizza Margherita</h4>
-                        <p>Masa artesanal, tomate, mozzarella fresca y albahaca</p>
-                        <div class="item-footer">
-                            <span class="price">$18.99</span>
-                            <button class="whatsapp-btn" data-item="Pizza Margherita" data-price="18.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Postres -->
-        <section class="menu-section" data-category="postres">
-            <h3 class="section-title">
-                <i class="fas fa-birthday-cake"></i>
-                Postres
-            </h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Tiramisú">
-                    </div>
-                    <div class="item-content">
-                        <h4>Tiramisú</h4>
-                        <p>Postre italiano clásico con café y cacao</p>
-                        <div class="item-footer">
-                            <span class="price">$9.99</span>
-                            <button class="whatsapp-btn" data-item="Tiramisú" data-price="9.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400" alt="Brownie">
-                    </div>
-                    <div class="item-content">
-                        <h4>Brownie con Helado</h4>
-                        <p>Brownie caliente con helado de vainilla y salsa de chocolate</p>
-                        <div class="item-footer">
-                            <span class="price">$8.99</span>
-                            <button class="whatsapp-btn" data-item="Brownie con Helado" data-price="8.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bebidas -->
-        <section class="menu-section" data-category="bebidas">
-            <h3 class="section-title">
-                <i class="fas fa-glass-water"></i>
-                Bebidas
-            </h3>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400" alt="Limonada">
-                    </div>
-                    <div class="item-content">
-                        <h4>Limonada Natural</h4>
-                        <p>Limonada fresca con menta y hielo</p>
-                        <div class="item-footer">
-                            <span class="price">$4.99</span>
-                            <button class="whatsapp-btn" data-item="Limonada Natural" data-price="4.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="item-image">
-                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400" alt="Café">
-                    </div>
-                    <div class="item-content">
-                        <h4>Café Expresso</h4>
-                        <p>Café de especialidad recién molido</p>
-                        <div class="item-footer">
-                            <span class="price">$3.99</span>
-                            <button class="whatsapp-btn" data-item="Café Expresso" data-price="3.99">
-                                <i class="fab fa-whatsapp"></i> Pedir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- Botón flotante de WhatsApp -->
-    <div class="whatsapp-float">
-        <button class="whatsapp-float-btn" id="whatsappCart">
-            <i class="fab fa-whatsapp"></i>
-            <span class="cart-count hidden" id="cartCount">0</span>
-        </button>
+    <div class="whatsapp-cta">
+        <a href="#" class="whatsapp-button" id="whatsappBtn" target="_blank">
+            <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Pedir por WhatsApp
+        </a>
     </div>
 
-    <!-- Modal del carrito -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h3>Tu Pedido</h3>
-                <button class="close-cart" id="closeCart">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <p class="empty-cart">Tu carrito está vacío</p>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
-                </div>
-                <button class="whatsapp-send-btn" id="sendWhatsApp">
-                    <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script src="menu-restaurante.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
