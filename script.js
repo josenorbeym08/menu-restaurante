@@ -23,8 +23,13 @@ function openWhatsApp() {
         whatsappUrl = `https://web.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodedMessage}`;
     }
     
-    // Abrir WhatsApp
-    window.open(whatsappUrl, '_blank');
+    // Intentar abrir WhatsApp
+    try {
+        window.open(whatsappUrl, '_blank');
+    } catch (error) {
+        // Si falla, intentar redirección directa
+        window.location.href = whatsappUrl;
+    }
 }
 
 // Función adicional para permitir pedir un plato específico
@@ -40,23 +45,75 @@ function pedirPlato(nombrePlato, precio) {
         whatsappUrl = `https://web.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodedMessage}`;
     }
     
-    window.open(whatsappUrl, '_blank');
+    try {
+        window.open(whatsappUrl, '_blank');
+    } catch (error) {
+        window.location.href = whatsappUrl;
+    }
 }
 
 // Agregar evento al botón cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     const whatsappBtn = document.getElementById('whatsappBtn');
+    
+    if (whatsappBtn) {
+        // Evento de clic
+        whatsappBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openWhatsApp();
+        });
+        
+        // También permitir acceso directo vía Enter o espacio si tiene foco
+        whatsappBtn.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openWhatsApp();
+            }
+        });
+        
+        console.log('Botón de WhatsApp configurado correctamente');
+    } else {
+        console.error('No se encontró el botón de WhatsApp con ID: whatsappBtn');
+    }
+    
+    // Agregar funcionalidad opcional: clic en items del menú para pedir directamente
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            const itemName = item.querySelector('.item-name')?.textContent;
+            const itemPrice = item.querySelector('.item-price')?.textContent;
+            
+            if (itemName && itemPrice) {
+                // Crear un pequeño botón o confirmar antes de enviar
+                if (confirm(`¿Deseas pedir "${itemName}" por WhatsApp?`)) {
+                    pedirPlato(itemName, itemPrice);
+                }
+            }
+        });
+        
+        // Agregar cursor pointer para indicar que es clickeable
+        item.style.cursor = 'pointer';
+    });
+});
+
+// Fallback: Si el DOM ya está cargado cuando se ejecuta el script
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ya está manejado arriba
+    });
+} else {
+    // El DOM ya está cargado
+    const whatsappBtn = document.getElementById('whatsappBtn');
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             openWhatsApp();
         });
     }
-});
+}
 
 
-// Hacer funciones disponibles globalmente para onclick
-window.updateQuantity = updateQuantity;
-window.removeFromCart = removeFromCart;
 
 
